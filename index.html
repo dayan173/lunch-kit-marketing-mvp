@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ابزار متن‌باز برای تبدیل ایده بازاریابی به آزمایش قابل‌اندازه‌گیری.">
+  <title>LaunchKit — آزمایشگاه MVP بازاریابی</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="LaunchKit home"><span class="brand-mark">L</span><span>LaunchKit</span><small>OPEN SOURCE</small></a>
+    <a class="github-link" href="https://github.com/" target="_blank" rel="noreferrer">پروژه متن‌باز ↗</a>
+  </header>
+
+  <main class="shell">
+    <section class="hero">
+      <div class="eyebrow"><span class="pulse"></span> MARKETING EXPERIMENT WORKSPACE</div>
+      <h1>قبل از اینکه بیشتر هزینه کنی،<br><em>ایده‌ات را اعتبارسنجی کن.</em></h1>
+      <p class="hero-copy">یک ابزار سبک برای ساخت فرضیه بازاریابی، نوشتن پیشنهاد ارزش و محاسبه نتیجه آزمایش‌های اولیه؛ بدون ثبت‌نام و بدون ارسال داده به سرور.</p>
+      <div class="hero-stats">
+        <div><strong>۳</strong><span>گام برای شروع</span></div>
+        <div><strong>۰</strong><span>نیاز به بک‌اند</span></div>
+        <div><strong>۱۰۰٪</strong><span>محلی در مرورگر</span></div>
+      </div>
+    </section>
+
+    <nav class="step-nav" aria-label="مراحل">
+      <button class="step active" data-step="0"><span>01</span> فرضیه</button>
+      <button class="step" data-step="1"><span>02</span> پیام بازاریابی</button>
+      <button class="step" data-step="2"><span>03</span> سنجش نتیجه</button>
+    </nav>
+
+    <section class="workspace">
+      <div class="panel step-panel active" data-panel="0">
+        <div class="panel-heading"><div><div class="kicker">STEP 01 / HYPOTHESIS</div><h2>فرضیه آزمایش را مشخص کن</h2></div><span class="panel-icon">◎</span></div>
+        <p class="muted">یک مخاطب مشخص و یک مسئله واقعی انتخاب کن. فرضیه خوب قابل‌آزمایش است، نه فقط جذاب.</p>
+        <div class="form-grid">
+          <label>نام پروژه یا محصول<input id="project" placeholder="مثلاً آژانس Edwin" value="Edwin Agency"></label>
+          <label>مخاطب هدف<input id="audience" placeholder="مثلاً فروشگاه‌های آنلاین کوچک"></label>
+          <label class="wide">مسئله اصلی مخاطب<textarea id="problem" rows="3" placeholder="مخاطب با چه مشکل مشخصی روبه‌روست؟"></textarea></label>
+          <label class="wide">فرضیه قابل‌آزمایش<textarea id="hypothesis" rows="3" placeholder="اگر برای [مخاطب]، [راه‌حل] را ارائه کنیم، انتظار داریم [رفتار قابل‌اندازه‌گیری] رخ دهد."></textarea></label>
+        </div>
+        <div class="panel-actions"><span class="hint">نکته: یک مخاطب، یک مسئله، یک آزمایش.</span><button class="primary next-btn">ادامه به پیام <span>←</span></button></div>
+      </div>
+
+      <div class="panel step-panel" data-panel="1">
+        <div class="panel-heading"><div><div class="kicker">STEP 02 / VALUE PROPOSITION</div><h2>پیام بازاریابی را بساز</h2></div><span class="panel-icon">✳</span></div>
+        <p class="muted">به‌جای فهرست‌کردن ویژگی‌ها، نتیجه‌ای را بگو که برای مخاطب مهم است.</p>
+        <div class="form-grid">
+          <label class="wide">راه‌حل یا خدمت<input id="solution" placeholder="مثلاً تولید محتوای کوتاه برای اینستاگرام"></label>
+          <label>مزیت متمایز<input id="benefit" placeholder="مثلاً تحویل منظم در ۴۸ ساعت"></label>
+          <label>دعوت به اقدام (CTA)<input id="cta" value="درخواست بررسی رایگان"></label>
+        </div>
+        <div class="generated">
+          <div class="generated-top"><span>پیش‌نمایش پیشنهاد ارزش</span><button id="copyValue" class="quiet">کپی متن</button></div>
+          <p id="valuePreview">برای [مخاطب هدف] که با [مسئله] روبه‌روست، [پروژه] راه‌حلی برای [راه‌حل] ارائه می‌کند تا به [مزیت] برسد.</p>
+          <div class="cta-preview"><span id="ctaPreview">درخواست بررسی رایگان</span><small>CTA پیشنهادی</small></div>
+        </div>
+        <div class="panel-actions"><button class="secondary back-btn">مرحله قبل</button><button class="primary next-btn">رفتن به سنجش <span>←</span></button></div>
+      </div>
+
+      <div class="panel step-panel" data-panel="2">
+        <div class="panel-heading"><div><div class="kicker">STEP 03 / MEASUREMENT</div><h2>نتیجه را با عدد بسنج</h2></div><span class="panel-icon">↗</span></div>
+        <p class="muted">اعداد نمونه را با داده‌های واقعی آزمایشت جایگزین کن. این محاسبه‌گر ساده، نرخ تبدیل و هزینه جذب هر لید را نشان می‌دهد.</p>
+        <div class="form-grid metrics-grid">
+          <label>بازدیدکننده‌ها<input id="visitors" type="number" min="0" value="500"></label>
+          <label>تعداد لید / سرنخ<input id="leads" type="number" min="0" value="25"></label>
+          <label>هزینه آزمایش (تومان)<input id="spend" type="number" min="0" value="1500000"></label>
+          <label>تعداد مشتری نهایی<input id="customers" type="number" min="0" value="5"></label>
+        </div>
+        <div class="results">
+          <div class="result-card"><span>نرخ تبدیل بازدید به لید</span><strong id="conversion">5.0%</strong><small>Leads ÷ Visitors</small></div>
+          <div class="result-card"><span>هزینه هر لید</span><strong id="cpl">60,000</strong><small>Spend ÷ Leads</small></div>
+          <div class="result-card"><span>نرخ تبدیل لید به مشتری</span><strong id="closeRate">20.0%</strong><small>Customers ÷ Leads</small></div>
+        </div>
+        <div id="insight" class="insight">برای شروع، روی کیفیت پیام و تناسب مخاطب تمرکز کن.</div>
+        <div class="panel-actions"><button class="secondary back-btn">مرحله قبل</button><button id="exportBtn" class="primary">خروجی گرفتن از آزمایش ↓</button></div>
+      </div>
+    </section>
+
+    <section class="bottom-grid">
+      <article class="note-card"><span class="note-icon">↗</span><h3>چرا این ابزار؟</h3><p>برای بازاریاب‌ها و کسب‌وکارهای کوچک طراحی شده تا پیش از صرف بودجه زیاد، فرضیه‌های خود را شفاف و قابل‌اندازه‌گیری کنند.</p></article>
+      <article class="note-card"><span class="note-icon">⌘</span><h3>حریم خصوصی</h3><p>اطلاعات واردشده به سرور ارسال نمی‌شود. خروجی فقط با اقدام خودت دانلود می‌شود و چیزی به‌صورت خودکار ذخیره نمی‌کنیم.</p></article>
+      <article class="note-card"><span class="note-icon">＋</span><h3>برای مشارکت</h3><p>می‌توانی ویژگی اضافه کنی، رابط را ترجمه کنی یا محاسبه‌گرهای بیشتری بسازی. راهنمای مشارکت در README آمده است.</p></article>
+    </section>
+    <footer><span>LaunchKit © 2026</span><span>MIT License · ساخته‌شده برای آزمایش‌های بهتر</span></footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
